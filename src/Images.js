@@ -12,7 +12,7 @@ class Images extends React.Component {
   }
 
   makeApiCall = () => {
-    fetch(`https://images-api.nasa.gov/search?q=mars&media_type=image&year_start=2021`)
+    fetch(`https://images-api.nasa.gov/search?q=planets%20Exploration&media_type=image&year_start=2000`)
     .then(response => response.json())
     .then(
       (jsonifiedResponse) => {
