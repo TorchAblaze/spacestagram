@@ -7,7 +7,7 @@ body {
 button {
   margin-top: 1rem;
   padding: 0.5rem;
-  width: 5rem;
+  width: 3rem;
 }
 
 img {
@@ -64,8 +64,18 @@ img {
   margin-bottom: 5rem;
 }
 
+button {
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.unliked {
+  background-color: lavender;
+}
+
 .liked {
-  background-color: blueviolet;
-  color: rgb(228, 228, 225);
-  border-color: blueviolet;
+  background-color: rgb(227, 198, 255);
 }
