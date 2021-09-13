@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './Button';
 
 class Images extends React.Component {
   constructor(props) {
@@ -7,7 +8,6 @@ class Images extends React.Component {
       error: null,
       isLoaded: false,
       images: [],
-      liked: false,
     }
   }
 
@@ -34,20 +34,9 @@ class Images extends React.Component {
     console.log(this.state.images)
   }
 
-  isLiked = () => {
-    this.setState({
-      liked: !this.state.liked
-    })
-  }
-
   render() {
-    const { error, isLoaded, images, liked } = this.state;
-    let buttonText = "🤍 Like"
-    let buttonClass = "unliked"
-    if (liked) {
-      buttonText = "💜 Liked"
-      buttonClass = "liked"
-    }
+    const { error, isLoaded, images } = this.state;
+    
     if(error) {
       return <>Error: {error.message}</>
     } else if (!isLoaded) {
@@ -59,7 +48,7 @@ class Images extends React.Component {
           {images.map((image, index) =>
             <div className="images">
               <img src={image.links[0].href} alt={image.data[0].title} key={index} />
-              <button onClick={this.isLiked} class={buttonClass}>{buttonText}</button>
+              <Button/>
               <p>Title: {image.data[0].title}</p>
               <p>Date: {image.data[0].date_created.slice(0,10)}</p>
               <p>Description: {image.data[0].description}</p>
