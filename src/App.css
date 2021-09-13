@@ -4,11 +4,19 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+button {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  width: 5rem;
+}
+
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
   border-radius: 1rem;
+  width: 900px;
+  height: auto;
 }
 
 .container {
@@ -54,4 +62,10 @@ img {
   box-sizing: border-box;
   border-radius: 1rem;
   margin-bottom: 5rem;
+}
+
+.liked {
+  background-color: blueviolet;
+  color: rgb(228, 228, 225);
+  border-color: blueviolet;
 }

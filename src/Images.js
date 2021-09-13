@@ -7,12 +7,12 @@ class Images extends React.Component {
       error: null,
       isLoaded: false,
       images: [],
-      liked: false
+      liked: false,
     }
   }
 
   makeApiCall = () => {
-    fetch(`https://images-api.nasa.gov/search?q=planets%20Exploration&media_type=image&year_start=2000`)
+    fetch(`https://images-api.nasa.gov/search?q=planets%20exploration&media_type=image&year_start=2000`)
     .then(response => response.json())
     .then(
       (jsonifiedResponse) => {
@@ -35,19 +35,19 @@ class Images extends React.Component {
   }
 
   isLiked = () => {
-    if (this.state.liked) {
-      this.setState({
-        liked: false
-      })
-    } else {
-      this.setState({
-        liked: true
-      })
-    }
+    this.setState({
+      liked: !this.state.liked
+    })
   }
 
   render() {
-    const { error, isLoaded, images, isLiked } = this.state;
+    const { error, isLoaded, images, liked } = this.state;
+    let buttonText = "🤍 Like"
+    let buttonClass = "unliked"
+    if (liked) {
+      buttonText = "💜 Liked"
+      buttonClass = "liked"
+    }
     if(error) {
       return <>Error: {error.message}</>
     } else if (!isLoaded) {
@@ -59,7 +59,7 @@ class Images extends React.Component {
           {images.map((image, index) =>
             <div className="images">
               <img src={image.links[0].href} alt={image.data[0].title} key={index} />
-              <button onClick={isLiked}>Like</button>
+              <button onClick={this.isLiked} class={buttonClass}>{buttonText}</button>
               <p>Title: {image.data[0].title}</p>
               <p>Date: {image.data[0].date_created.slice(0,10)}</p>
               <p>Description: {image.data[0].description}</p>
