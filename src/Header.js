@@ -43,7 +43,7 @@ class Header extends React.Component {
         <div className="header">
           <img id="header-image" src={`https://epic.gsfc.nasa.gov/archive/natural/${((images.date).slice(0,10)).replaceAll('-','/')}/png/${images.image}.png`} alt={`Earth: ${images.caption}`} />
           <div className="header-text">
-            <h1>Spacetagram</h1>
+            <h1>Spacestagram</h1>
             <p><em>Exploring interest in outter regions</em></p>
           </div>
         </div>

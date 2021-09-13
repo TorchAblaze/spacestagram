@@ -5,7 +5,7 @@ class Footer extends React.Component {
   render() {
     return (
       <footer className="footer">
-        <p>Spacetagram by Shopify 2021</p>
+        <p>Spacestagram by Shopify 2021</p>
       </footer>
     )
   }
