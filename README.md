@@ -1,4 +1,58 @@
+# 🛰️ SPACESTAGRAM 🚀
+
+#### _A place for all things space, 9/12/2021_
+
+#### By _**Tiffany Greathead**_
+
+## Description
+
+Spacestagram is a simple react web application where users can view and "like" photos from NASA's image and video library.
+
+## Setup/Installation Requirements
+
+Software Requirements
+
+1. Internet browser
+2. A code editor like VSCode or Atom to view or edit the codebase
+3. A [free api key](https://api.nasa.gov/) from NASA
+
+Open via Bash/GitBash:
+
+1. Clone this repository onto your computer:
+   `git clone https://github.com/TorchAblaze/spacestagram.git`
+2. Navigate into the `spacestagram` directory and open in Visual Studio Code or preferred text editor
+3. Create a `.env` file in the `spacestagram` directory
+4. Copy and paste the following text in the `.env` file, replacing `<YourAPIKey>` with your NASA api key (don't include the <>):
+
+```
+REACT_APP_API_KEY=<YourAPIKey>
+```
+
+5. Run `npm install` or `npm i` to install the dependencies
+6. Run `npm start` to view the application
+
+## Bugs 🐞
+
+_No known bugs_
+
+## Support and contact details
+
+_Please reach out through my GitHub account._
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+- React
+
+## Screenshot
+
+<img src="./src/img/web-app-screenshot.PNG" alt="screen shot of web application" width="500"/>
+
 # Getting Started with Create React App
+
+<details>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,3 +122,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+</details>
+
+### License
+
+MIT License.
+
+Copyright (c) 2021 **_Tiffany Greathead_**
