@@ -48,8 +48,8 @@ class Images extends React.Component {
             <div className="images">
               <img src={image.links[0].href} alt={image.data[0].title} key={index} />
               <Button/>
-              <p>Title: {image.data[0].title}</p>
               <p>Date: {image.data[0].date_created.slice(0,10)}</p>
+              <p>Title: {image.data[0].title}</p>
               <p>Description: {image.data[0].description}</p>
             </div>
           )}
