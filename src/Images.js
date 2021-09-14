@@ -18,7 +18,7 @@ class Images extends React.Component {
       (jsonifiedResponse) => {
         this.setState({
           isLoaded: true,
-          images: [...jsonifiedResponse.collection.items.slice(0,9)]
+          images: [...jsonifiedResponse.collection.items.slice(0,9), ...jsonifiedResponse.collection.items.slice(43, 53)]
         });
       })
       .catch((error) => {
@@ -31,7 +31,6 @@ class Images extends React.Component {
 
   componentDidMount() {
     this.makeApiCall()
-    console.log(this.state.images)
   }
 
   render() {
