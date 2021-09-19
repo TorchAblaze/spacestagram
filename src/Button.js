@@ -16,16 +16,16 @@ class Button extends React.Component {
 
   render() {
     const { liked } = this.state;
-    let buttonText = "🤍"
+    let buttonText = "🤍 Like"
     let buttonClass = "unliked"
     
     if (liked) {
-      buttonText = "💜"
+      buttonText = "💜 Unlike"
       buttonClass = "liked"
     }
 
     return (
-      <button onClick={this.isLiked} class={buttonClass}>{buttonText}</button>
+      <button onClick={this.isLiked} className={buttonClass}>{buttonText}</button>
     )
   }
 }
