@@ -44,7 +44,7 @@ class Images extends React.Component {
       return (
         <>
           {images.map((image, index) =>
-            <figure className="images">
+            <figure className="images container">
               <img src={image.links[0].href} alt={image.data[0].title} key={index} title={image.data[0].title}/>
               <Button/>
               <p><strong>Date:</strong> {image.data[0].date_created.slice(0,10)}</p>
