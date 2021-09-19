@@ -17,7 +17,7 @@ class Header extends React.Component {
       (jsonifiedResponse) => {
         this.setState({
           isLoaded: true,
-          images: jsonifiedResponse[0]
+          headerImage: jsonifiedResponse[0]
         });
       })
       .catch((error) => {
@@ -33,20 +33,21 @@ class Header extends React.Component {
   }
 
   render() {
-    const { error, isLoaded, images } = this.state;
+    const { error, isLoaded, headerImage } = this.state;
+
     if (error) {
       return <>Error: {error.message}</>;
     } else if (!isLoaded) {
       return <>Loading...</>
     } else {
       return (
-        <div className="header">
-          <img id="header-image" src={`https://epic.gsfc.nasa.gov/archive/natural/${((images.date).slice(0,10)).replaceAll('-','/')}/png/${images.image}.png`} alt={`Earth: ${images.caption}`} />
+        <header>
+          <img id="header-image" src={`https://epic.gsfc.nasa.gov/archive/natural/${((headerImage.date).slice(0,10)).replaceAll('-','/')}/png/${headerImage.image}.png`} alt={`Earth: ${headerImage.caption}`} />
           <div className="header-text">
             <h1>Spacestagram</h1>
-            <p><em>Exploring interest in outter regions</em></p>
+            <p><em>Exploring interest in outer regions</em></p>
           </div>
-        </div>
+        </header>
       )
     }
   }
