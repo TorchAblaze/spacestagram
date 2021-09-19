@@ -42,18 +42,17 @@ class Images extends React.Component {
       return <>Loading...</>
     } else {
       return (
-        <div className="container">
-          <h2>Photos:</h2>
+        <>
           {images.map((image, index) =>
-            <div className="images">
-              <img src={image.links[0].href} alt={image.data[0].title} key={index} />
+            <figure className="images">
+              <img src={image.links[0].href} alt={image.data[0].title} key={index} title={image.data[0].title}/>
               <Button/>
-              <p>Date: {image.data[0].date_created.slice(0,10)}</p>
-              <p>Title: {image.data[0].title}</p>
-              <p>Description: {image.data[0].description}</p>
-            </div>
+              <p><strong>Date:</strong> {image.data[0].date_created.slice(0,10)}</p>
+              <p><strong>Title:</strong> {image.data[0].title}</p>
+              <figcaption><strong>Description:</strong> {image.data[0].description}</figcaption>
+            </figure>
           )}
-        </div>
+        </>
       )
     }
   }
