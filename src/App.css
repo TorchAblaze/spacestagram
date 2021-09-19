@@ -10,12 +10,17 @@ button {
   width: 3rem;
 }
 
+header {
+  text-align: center;
+  position: relative;
+}
+
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
   border-radius: 1rem;
-  width: 900px;
+  width: 95%;
   height: auto;
 }
 
@@ -32,11 +37,6 @@ img {
   bottom: 0;
   left: 0;
   width: 100%;
-}
-
-.header {
-  text-align: center;
-  position: relative;
 }
 
 #header-image {
@@ -66,6 +66,7 @@ img {
 
 button {
   border: none;
+  width: 5rem;
 }
 
 button:hover {
@@ -73,9 +74,9 @@ button:hover {
 }
 
 .unliked {
-  background-color: lavender;
+  background-color: rgb(227, 198, 255);
 }
 
 .liked {
-  background-color: rgb(227, 198, 255);
+  background-color: #d7b4ff;
 }
