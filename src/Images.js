@@ -7,6 +7,7 @@ class Images extends React.Component {
     this.state = {
       error: null,
       isLoaded: false,
+      keywords: "",
       images: [],
     }
   }
@@ -18,7 +19,7 @@ class Images extends React.Component {
       (jsonifiedResponse) => {
         this.setState({
           isLoaded: true,
-          images: [...jsonifiedResponse.collection.items.slice(1,14), ...jsonifiedResponse.collection.items.slice(46, 60)]
+          images: [...jsonifiedResponse.collection.items]
         });
       })
       .catch((error) => {
@@ -33,8 +34,36 @@ class Images extends React.Component {
     this.makeApiCall()
   }
 
+  handleInputChange = (e) => {
+    this.setState = {
+      keywords: e.target.value
+    }
+  }
+
+  handleSearchQuery = (e) => {
+    e.preventDefault();
+    fetch(`https://images-api.nasa.gov/search?q=${this.state.keywords}&media_type=image`)
+    .then(response => response.json())
+    .then(
+      (jsonifiedResponse) => {
+        this.setState({
+          images: [...jsonifiedResponse.collection.items]
+        });
+      })
+      .catch((error) => {
+        this.setState({
+          error
+        })
+      })
+      this.setState(
+        {
+          keywords: ""
+        }
+      )
+  }
+
   render() {
-    const { error, isLoaded, images } = this.state;
+    const { error, isLoaded, images, keywords } = this.state;
     
     if(error) {
       return <>Error: {error.message}</>
@@ -43,14 +72,39 @@ class Images extends React.Component {
     } else {
       return (
         <>
-          {images.map((image, index) =>
-            <figure className="images container">
-              <img src={image.links[0].href} alt={image.data[0].title} key={index} title={image.data[0].title}/>
-              <Button/>
-              <p><strong>Date:</strong> {image.data[0].date_created.slice(0,10)}</p>
-              <p><strong>Title:</strong> {image.data[0].title}</p>
-              <figcaption><strong>Description:</strong> {image.data[0].description}</figcaption>
-            </figure>
+        <form onSubmit={this.handleSearchQuery} className="container">
+          <label htmlFor="imageSearch">Enter a keyword(s) to search NASA's photo library</label>
+          <input type="text" id="imageSearch" value={keywords} onChange={this.handleInputChange} placeholder="Ex. Apollo 11, Mars, Astronaut" />
+          <button id="submit">Submit</button>
+        </form>
+          {images.map((image, index) => {
+            const { title, date_created, description } = image.data[0]
+            const { href } = image.links[0]
+
+            let imageDescription;
+            let imageTitle;
+            let imageDate;
+            if (description) {
+              imageDescription = <figcaption><strong>Description:</strong> {description}</figcaption>
+            }
+
+            if (title) {
+              imageTitle = <p><strong>Title:</strong> {title}</p>
+            }
+
+            if (date_created) {
+              imageDate = <p><strong>Date:</strong> {date_created.slice(0,10)}</p>
+            }
+
+            return (
+              <figure className="images container" key={`${index}: ${title}`}>
+                <img src={href} alt={title} title={title}/>
+                <Button/>
+                {imageDate}
+                {imageTitle}
+                {imageDescription}
+              </figure>
+            )}
           )}
         </>
       )
