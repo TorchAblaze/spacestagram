@@ -12,13 +12,13 @@ class Images extends React.Component {
   }
 
   makeApiCall = () => {
-    fetch(`https://images-api.nasa.gov/search?q=planets%20exploration&media_type=image&year_start=2000`)
+    fetch(`https://images-api.nasa.gov/search?q=apollo&media_type=image`)
     .then(response => response.json())
     .then(
       (jsonifiedResponse) => {
         this.setState({
           isLoaded: true,
-          images: [...jsonifiedResponse.collection.items.slice(0,9), ...jsonifiedResponse.collection.items.slice(43, 53)]
+          images: [...jsonifiedResponse.collection.items.slice(1,14), ...jsonifiedResponse.collection.items.slice(46, 60)]
         });
       })
       .catch((error) => {
