@@ -29,18 +29,24 @@ img {
   height: auto;
 }
 
+input {
+  width: 88%;
+  padding: 0.8rem;
+  margin: 1rem 0;
+  box-sizing: border-box;
+  border-style: solid;
+  font-size: medium;
+  background-color: rgb(237, 223, 238);
+}
+
 .container {
   max-width: 970px;
   margin: 0 auto;
 }
 
-.footer {
-  margin-top: 1rem;
+footer {
   padding: 0.2rem 5rem;
   background-color: rgba(92, 13, 95, 0.589);
-  position: fixed;
-  bottom: 0;
-  left: 0;
   width: 100%;
 }
 
@@ -69,6 +75,12 @@ img {
   box-sizing: border-box;
   border-radius: 1rem;
   margin-bottom: 5rem;
+}
+
+#submit {
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+  height: 2.5rem;
 }
 
 .unliked {
