@@ -35,31 +35,29 @@ class Images extends React.Component {
   }
 
   handleInputChange = (e) => {
-    this.setState = {
+    this.setState({
       keywords: e.target.value
-    }
+    })
   }
 
   handleSearchQuery = (e) => {
     e.preventDefault();
-    fetch(`https://images-api.nasa.gov/search?q=${this.state.keywords}&media_type=image`)
+    fetch(`https://images-api.nasa.gov/search?q=${this.state.keywords}&media_type=image&page=1`)
     .then(response => response.json())
     .then(
       (jsonifiedResponse) => {
         this.setState({
-          images: [...jsonifiedResponse.collection.items]
+          isLoaded: true,
+          images: [...jsonifiedResponse.collection.items],
+          keywords: ""
         });
       })
       .catch((error) => {
         this.setState({
+          isLoaded: true,
           error
         })
       })
-      this.setState(
-        {
-          keywords: ""
-        }
-      )
   }
 
   render() {
@@ -74,7 +72,7 @@ class Images extends React.Component {
         <>
         <form onSubmit={this.handleSearchQuery} className="container">
           <label htmlFor="imageSearch">Enter a keyword(s) to search NASA's photo library</label>
-          <input type="text" id="imageSearch" value={keywords} onChange={this.handleInputChange} placeholder="Ex. Apollo 11, Mars, Astronaut" />
+          <input type="text" id="imageSearch" name="imageSearch" value={keywords} onChange={this.handleInputChange} placeholder="Ex. Apollo 11, Mars, Astronaut" />
           <button id="submit">Submit</button>
         </form>
           {images.map((image, index) => {
