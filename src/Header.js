@@ -38,7 +38,7 @@ class Header extends React.Component {
     if (error) {
       return <>Error: {error.message}</>;
     } else if (!isLoaded) {
-      return <>Loading...</>
+      return <>Spacestagram: </>
     } else {
       return (
         <header>
