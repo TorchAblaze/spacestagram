@@ -73,7 +73,7 @@ class Images extends React.Component {
         <form onSubmit={this.handleSearchQuery} className="container">
           <label htmlFor="imageSearch">Enter a keyword(s) to search NASA's photo library</label>
           <input type="text" id="imageSearch" name="imageSearch" value={keywords} onChange={this.handleInputChange} placeholder="Ex. Apollo 11, Mars, Astronaut" />
-          <button id="submit">Submit</button>
+          <button id="submit">Search</button>
         </form>
           {images.map((image, index) => {
             const { title, date_created, description } = image.data[0]
