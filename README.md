@@ -31,6 +31,8 @@ REACT_APP_API_KEY=<YourAPIKey>
 5. Run `npm install` or `npm i` to install the dependencies
 6. Run `npm start` to view the application
 
+#### [See my live website](https://torchablaze.github.io/spacestagram/)
+
 ## Bugs 🐞
 
 _No known bugs_
