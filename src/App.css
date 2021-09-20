@@ -15,6 +15,11 @@ button:hover {
   cursor: pointer;
 }
 
+figcaption {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 header {
   text-align: center;
   position: relative;
@@ -47,12 +52,11 @@ input {
 footer {
   padding: 0.2rem 5rem;
   background-color: rgba(92, 13, 95, 0.589);
-  width: 100%;
 }
 
 #header-image {
-  height: 20%;
-  width: 20%;
+  height: 10%;
+  width: 10%;
   border-radius: 50%;
   min-width: 8rem;
   margin-bottom: 1rem;
@@ -63,7 +67,7 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 0.1rem 0.5rem 1.5rem 0.5rem;
+  padding: 0.1rem 0.5rem 1.3rem 0.5rem;
   background-color: rgba(92, 13, 95, 0.753);
   width: 100%;
 }
