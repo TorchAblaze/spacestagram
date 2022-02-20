@@ -10,7 +10,7 @@ button {
   width: 5rem;
   border: none;
   color: white;
-  background-color: rgba(92, 13, 95, 0.589);
+  background-color: rgb(155, 199, 179);
 }
 
 button:hover {
