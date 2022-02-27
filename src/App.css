@@ -10,11 +10,12 @@ button {
   width: 5rem;
   border: none;
   color: white;
-  background-color: rgb(155, 199, 179);
+  background-color: rgba(132, 29, 136, 0.543);
 }
 
 button:hover {
   cursor: pointer;
+  background-color: rgb(92, 13, 95);
 }
 
 figcaption {
