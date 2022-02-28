@@ -131,6 +131,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 MIT License.
 
-Loading Image from Nirmal Sankalana on [CodePen](https://codepen.io/nirmalsankalana/pen/OJmoJYg)
+Loading animation from Nirmal Sankalana on [CodePen](https://codepen.io/nirmalsankalana/pen/OJmoJYg)
 
 Copyright (c) 2021 **_Tiffany Greathead_**
